@@ -108,12 +108,12 @@
           <h2>Available Vehicles</h2>
         </div>
         <div class="filters">
-          <button class="filter active" onclick="filterCollection(this,'all')">All</button>
-          <button class="filter" onclick="filterCollection(this,'sedan')">Sedan</button>
-          <button class="filter" onclick="filterCollection(this,'suv')">SUV</button>
-          <button class="filter" onclick="filterCollection(this,'sports')">Sports</button>
-          <button class="filter" onclick="filterCollection(this,'luxury')">Luxury</button>
-          <button class="filter" onclick="filterCollection(this,'ev')">EV</button>
+          <button class="filter active" onclick="filterFleet(this,'all')">All</button>
+          <button class="filter" onclick="filterFleet(this,'sedan')">Sedan</button>
+          <button class="filter" onclick="filterFleet(this,'suv')">SUV</button>
+          <button class="filter" onclick="filterFleet(this,'sports')">Sports</button>
+          <button class="filter" onclick="filterFleet(this,'luxury')">Luxury</button>
+          <button class="filter" onclick="filterFleet(this,'ev')">EV</button>
         </div>
       </div>
       <div class="Collection-grid" id="CollectionGrid">
@@ -998,110 +998,15 @@
                 <p class="vsub">Idle · Andheri West, Mumbai</p>
               </div><span class="vstatus idle">Idle</span>
             </div>
-            <div class="veh-item" onclick="focusVehicle(this,3)">
-              <div class="vdot moving"></div>
-              <div class="vinfo">
-                <p class="vname">Lamborghini Huracán · KA 03 PQ</p>
-                <p class="vsub">Renter: Kushal S. · Since 11:15</p>
-              </div><span class="vstatus moving">Moving</span>
-            </div>
-            <div class="veh-item" onclick="focusVehicle(this,4)">
-              <div class="vdot parked"></div>
-              <div class="vinfo">
-                <p class="vname">Tesla Model Y · KA 09 TT 3344</p>
-                <p class="vsub">Parked · Koramangala, Bengaluru</p>
-              </div><span class="vstatus parked">Parked</span>
-            </div>
-            <div class="veh-item" onclick="focusVehicle(this,5)">
-              <div class="vdot idle"></div>
-              <div class="vinfo">
-                <p class="vname">Audi A8 L · DL 3C AA 0021</p>
-                <p class="vsub">Idle · Connaught Place, Delhi</p>
-              </div><span class="vstatus idle">Idle</span>
-            </div>
-          </div>
-          <p class="panel-label mt-16">Today's Trips</p>
-          <div class="trip-list">
-            <div class="trip-item"><span>🟢</span>
-              <div>
-                <p class="trip-route">Indiranagar → Whitefield</p>
-                <p class="trip-meta">Porsche 718 · 09:30 · 34 min</p>
-              </div><span class="trip-dist">18 km</span>
-            </div>
-            <div class="trip-item"><span>🟡</span>
-              <div>
-                <p class="trip-route">MG Road → UB City</p>
-                <p class="trip-meta">Mercedes AMG · 08:15 · 12 min</p>
-              </div><span class="trip-dist">6 km</span>
-            </div>
-            <div class="trip-item"><span>🔵</span>
-              <div>
-                <p class="trip-route">Bandra → Andheri West</p>
-                <p class="trip-meta">BMW M3 · 07:50 · 28 min</p>
-              </div><span class="trip-dist">11 km</span>
-            </div>
-            <div class="trip-item"><span>🟢</span>
-              <div>
-                <p class="trip-route">Koramangala → Electronic City</p>
-                <p class="trip-meta">Lamborghini · 11:15 · Ongoing</p>
-              </div><span class="trip-dist">22 km</span>
-            </div>
           </div>
         </div>
         <div class="map-panel">
-          <div class="map-topbar"><span class="map-title" id="mapTitle">Porsche 718 — Live</span><span
-              class="live-chip"><span class="live-dot"></span>LIVE</span></div>
-          <div class="map-canvas" id="mapCanvas">
-            <svg width="100%" height="100%" style="position:absolute;inset:0">
-              <defs>
-                <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M40 0L0 0 0 40" fill="none" stroke="rgba(255,255,255,.025)" stroke-width="1" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#g)" />
-              <path stroke="rgba(92,111,255,.22)" stroke-width="2.5" fill="none" stroke-linecap="round"
-                d="M50 220Q200 220 400 220Q600 220 750 220" />
-              <path stroke="rgba(92,111,255,.22)" stroke-width="2.5" fill="none" stroke-linecap="round"
-                d="M370 30Q370 150 370 220Q370 300 370 420" />
-              <path stroke="rgba(92,111,255,.22)" stroke-width="2.5" fill="none" stroke-linecap="round"
-                d="M100 30Q100 200 100 440" />
-              <path stroke="rgba(92,111,255,.22)" stroke-width="2.5" fill="none" stroke-linecap="round"
-                d="M620 30Q620 200 620 440" />
-              <path stroke="rgba(255,255,255,.06)" stroke-width="1.5" fill="none"
-                d="M50 120Q250 120 500 110Q650 105 750 108" />
-              <path stroke="rgba(255,255,255,.06)" stroke-width="1.5" fill="none"
-                d="M50 330Q250 330 500 330Q750 330 750 330" />
-              <path stroke="rgba(255,255,255,.06)" stroke-width="1.5" fill="none" d="M240 30Q240 220 240 440" />
-              <path stroke="rgba(255,255,255,.06)" stroke-width="1.5" fill="none" d="M500 30Q500 220 500 440" />
-              <rect fill="rgba(92,111,255,.1)" stroke="rgba(92,111,255,.22)" stroke-width="1" rx="3" x="140" y="155"
-                width="60" height="42" />
-              <rect fill="rgba(92,111,255,.1)" stroke="rgba(92,111,255,.22)" stroke-width="1" rx="3" x="410" y="240"
-                width="50" height="38" />
-              <rect fill="rgba(92,111,255,.1)" stroke="rgba(92,111,255,.22)" stroke-width="1" rx="3" x="270" y="80"
-                width="44" height="32" />
-              <rect fill="rgba(92,111,255,.1)" stroke="rgba(92,111,255,.22)" stroke-width="1" rx="3" x="540" y="140"
-                width="52" height="40" />
-              <text font-family="monospace" font-size="8" fill="rgba(255,255,255,.2)" x="148" y="180">MG Road</text>
-              <text font-family="monospace" font-size="8" fill="rgba(255,255,255,.2)" x="413" y="262">UB City</text>
-              <text font-family="monospace" font-size="8" fill="rgba(255,255,255,.2)" x="272" y="97">Indiranagar</text>
-              <text font-family="monospace" font-size="8" fill="rgba(255,255,255,.2)" x="542" y="158">Whitefield</text>
-              <text font-family="monospace" font-size="8" fill="rgba(255,255,255,.2)" x="52" y="212">Koramangala</text>
-              <path stroke="rgba(92,111,255,.4)" stroke-width="1.5" fill="none" stroke-dasharray="5 3"
-                d="M120 300Q200 250 240 220Q300 200 370 220Q440 240 500 220Q580 200 620 160" />
-            </svg>
-            <div style="position:absolute;left:43%;top:55%;transform:translate(-50%,-50%)">
-              <div class="omark parked">P</div>
-            </div>
-            <div style="position:absolute;left:14%;top:70%;transform:translate(-50%,-50%)">
-              <div class="omark parked">P</div>
-            </div>
-            <div style="position:absolute;left:68%;top:30%;transform:translate(-50%,-50%)">
-              <div class="omark idle">·</div>
-            </div>
-            <div style="position:absolute;left:80%;top:72%;transform:translate(-50%,-50%)">
-              <div class="omark idle">·</div>
-            </div>
-            <div class="car-marker" id="carMarker" style="left:50%;top:48%">
+          <div class="map-topbar">
+            <div class="map-title" id="mapTitle">Porsche 718 · Moving</div>
+            <div class="live-chip"><span class="live-dot"></span>Live</div>
+          </div>
+          <div class="map-canvas">
+            <div class="car-marker" id="carMarker">
               <div class="cmarker-ring"></div>
               <div class="cmarker-dot">🚗</div>
               <div class="cmarker-label" id="carLabel">Porsche 718</div>
@@ -1109,24 +1014,24 @@
           </div>
           <div class="map-stats">
             <div class="mstat">
-              <p class="mstat-l">Speed</p>
-              <p class="mstat-v" id="ms-speed">48</p>
-              <p class="mstat-u">km/h</p>
+              <div class="mstat-l">Speed</div>
+              <div class="mstat-v" id="ms-speed">0</div>
+              <div class="mstat-u">km/h</div>
             </div>
             <div class="mstat">
-              <p class="mstat-l">Distance</p>
-              <p class="mstat-v" id="ms-dist">18.4</p>
-              <p class="mstat-u">km</p>
+              <div class="mstat-l">Distance</div>
+              <div class="mstat-v" id="ms-dist">0</div>
+              <div class="mstat-u">km</div>
             </div>
             <div class="mstat">
-              <p class="mstat-l">Trip Time</p>
-              <p class="mstat-v" id="ms-time">34</p>
-              <p class="mstat-u">min</p>
+              <div class="mstat-l">Time</div>
+              <div class="mstat-v" id="ms-time">0</div>
+              <div class="mstat-u">min</div>
             </div>
             <div class="mstat">
-              <p class="mstat-l">Fuel</p>
-              <p class="mstat-v" id="ms-fuel">72</p>
-              <p class="mstat-u">%</p>
+              <div class="mstat-l">Fuel</div>
+              <div class="mstat-v" id="ms-fuel">0</div>
+              <div class="mstat-u">%</div>
             </div>
           </div>
         </div>
@@ -1138,107 +1043,90 @@
   <div id="page-list" class="page">
     <div class="inner-page-wrap">
       <button class="btn btn-ghost btn-sm mb-20" onclick="Router.go('home')">← Back</button>
-      <p class="tag">For Vehicle Owners</p>
-      <h2>List your vehicle</h2>
-      <p class="page-desc">Earn from your vehicle when it is not in use. MB MOTORS manages bookings, insurance,
-        logistics and customer support. You retain full ownership and control your availability at any time.</p>
+      <p class="tag">Income Opportunity</p>
+      <h2>List Your Car</h2>
+      <p class="page-desc">Turn your car into a revenue stream. Earn passive income by listing your vehicle on MB
+        MOTORS.</p>
 
       <div class="list-layout">
         <div>
-          <p class="tag mt-32">Process</p>
-          <div class="how-list">
-            <div class="how-item"><span class="how-n">01</span>
+          <h3 style="margin-bottom: 20px;">How it works</h3>
+          <ul class="how-list">
+            <li class="how-item">
+              <span class="how-n">1</span>
               <div>
-                <h4>Submit vehicle details</h4>
-                <p>Fill the form below. Our team reviews every submission within 24 hours against our quality standards
-                  before approval.</p>
+                <h4>List Your Vehicle</h4>
+                <p>Provide details about your car: make, model, mileage, condition, and pricing.</p>
               </div>
-            </div>
-            <div class="how-item"><span class="how-n">02</span>
+            </li>
+            <li class="how-item">
+              <span class="how-n">2</span>
               <div>
-                <h4>Inspection and listing</h4>
-                <p>We schedule a free inspection at your location. On approval your vehicle is listed with professional
-                  photography and managed pricing.</p>
+                <h4>We Inspect</h4>
+                <p>Our team conducts a thorough inspection at your location, including safety and insurance checks.</p>
               </div>
-            </div>
-            <div class="how-item"><span class="how-n">03</span>
+            </li>
+            <li class="how-item">
+              <span class="how-n">3</span>
               <div>
-                <h4>Bookings and payouts</h4>
-                <p>We handle all customer communication, collection, the rental period, and return the vehicle cleaned
-                  and refuelled. Payouts process every Monday via bank transfer.</p>
+                <h4>Go Live</h4>
+                <p>Once approved, your car appears in our fleet. Start receiving bookings immediately.</p>
               </div>
-            </div>
-            <div class="how-item"><span class="how-n">04</span>
+            </li>
+            <li class="how-item">
+              <span class="how-n">4</span>
               <div>
-                <h4>Owner controls</h4>
-                <p>Block dates when you need the car back through the owner dashboard. All activity is logged
-                  transparently. You remain in full control of availability.</p>
+                <h4>Earn Passively</h4>
+                <p>For each booking, you earn. We handle everything — insurance, maintenance, support.</p>
               </div>
-            </div>
-          </div>
-          <p class="tag mt-32">Owner Benefits</p>
-          <div class="perks-grid">
-            <div class="perk-card"><span>💰</span>
-              <h4>₹40K–₹1.2L/month</h4>
-              <p>Earning potential varies by vehicle category, city demand and availability. Top-tier exotics earn
-                consistently above ₹1 lakh per month.</p>
-            </div>
-            <div class="perk-card"><span>🛡️</span>
-              <h4>Full Insurance</h4>
-              <p>Every rental is covered under our partner policy. Full damage and theft coverage, door to door, at no
-                cost to the owner.</p>
-            </div>
-            <div class="perk-card"><span>🧹</span>
-              <h4>Returned Clean</h4>
-              <p>Vehicles are professionally cleaned and refuelled after every rental. They come back in better
-                condition than they left.</p>
-            </div>
-            <div class="perk-card"><span>📊</span>
-              <h4>Owner Dashboard</h4>
-              <p>Live visibility into bookings, location, earnings and payout history through the MB MOTORS owner
-                portal.</p>
+            </li>
+          </ul>
+
+          <div style="margin-top: 32px; margin-bottom: 32px;">
+            <h3 style="margin-bottom: 20px;">Why partner with us?</h3>
+            <div class="perks-grid">
+              <div class="perk-card">
+                <span>💰</span>
+                <h4>100% Transparent</h4>
+                <p>Know exactly what you're earning. Real-time dashboard shows every booking and payment.</p>
+              </div>
+              <div class="perk-card">
+                <span>🛡️</span>
+                <h4>Fully Insured</h4>
+                <p>Comprehensive coverage included. We cover all damages and liability. You own the car, we take the risk.
+                </p>
+              </div>
+              <div class="perk-card">
+                <span>🔧</span>
+                <h4>Maintenance Included</h4>
+                <p>Regular servicing, repairs, fuel — all on us. Your car is maintained to premium standards.</p>
+              </div>
+              <div class="perk-card">
+                <span>📊</span>
+                <h4>Real Earnings</h4>
+                <p>After platform fees, you net 80% of the rental rate. Predictable, recurring income each month.</p>
+              </div>
             </div>
           </div>
 
-          <p class="tag mt-32">Submit Your Car</p>
           <div class="form-card">
-            <p class="form-card-title">Owner Details</p>
+            <p class="form-card-title">Your Vehicle Details</p>
             <div class="form-row mb-12">
-              <div class="fg"><label class="fl">Full Name</label><input type="text" class="fi"
-                  placeholder="Your full name" /></div>
-              <div class="fg"><label class="fl">Phone</label><input type="tel" class="fi"
-                  placeholder="+91 98765 43210" /></div>
-            </div>
-            <div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="you@email.com" />
-            </div>
-          </div>
-          <div class="form-card mt-10">
-            <p class="form-card-title">Vehicle Details</p>
-            <div class="form-row mb-12">
-              <div class="fg"><label class="fl">Make</label><select class="fi">
-                  <option>Porsche</option>
-                  <option>Mercedes-Benz</option>
-                  <option>BMW</option>
-                  <option>Audi</option>
-                  <option>Lamborghini</option>
-                  <option>Ferrari</option>
-                  <option>Range Rover</option>
-                  <option>Tesla</option>
-                  <option>Jaguar</option>
-                  <option>Other</option>
-                </select></div>
-              <div class="fg"><label class="fl">Model</label><input type="text" class="fi"
-                  placeholder="e.g. 718 Cayman S" /></div>
+              <div class="fg"><label class="fl">Vehicle Make</label><input type="text" class="fi"
+                  placeholder="e.g., BMW, Mercedes" /></div>
+              <div class="fg"><label class="fl">Model</label><input type="text" class="fi" placeholder="e.g., M3, E63" />
+              </div>
             </div>
             <div class="form-row mb-12">
-              <div class="fg"><label class="fl">Year</label><select class="fi">
-                  <option>2026</option>
-                  <option>2025</option>
-                  <option>2024</option>
-                  <option>2023</option>
-                  <option>2022</option>
-                  <option>2021</option>
-                  <option>2020</option>
+              <div class="fg"><label class="fl">Year of Manufacture</label><input type="number" class="fi"
+                  placeholder="2022" /></div>
+              <div class="fg"><label class="fl">Current Mileage (km)</label><input type="number" class="fi"
+                  placeholder="45000" /></div>
+            </div>
+            <div class="form-row mb-12">
+              <div class="fg"><label class="fl">Transmission</label><select class="fi">
+                  <option>Manual</option>
+                  <option>Automatic</option>
                 </select></div>
               <div class="fg"><label class="fl">Fuel Type</label><select class="fi">
                   <option>Petrol</option>
@@ -1248,95 +1136,76 @@
                 </select></div>
             </div>
             <div class="form-row mb-12">
-              <div class="fg"><label class="fl">Transmission</label><select class="fi">
-                  <option>Automatic</option>
-                  <option>Manual</option>
-                  <option>PDK / DCT</option>
+              <div class="fg"><label class="fl">City</label><select class="fi">
+                  <option>Bengaluru, Karnataka</option>
+                  <option>Mumbai, Maharashtra</option>
+                  <option>Delhi NCR</option>
+                  <option>Chennai, Tamil Nadu</option>
+                  <option>Hyderabad, Telangana</option>
+                  <option>Pune, Maharashtra</option>
+                  <option>Panaji, Goa</option>
+                  <option>Ahmedabad, Gujarat</option>
                 </select></div>
-              <div class="fg"><label class="fl">Seats</label><select class="fi">
-                  <option>2</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>7</option>
-                </select></div>
+              <div class="fg"><label class="fl">Registration Number</label><input type="text" class="fi"
+                  placeholder="KA 01 AB 1234" /></div>
             </div>
-            <div class="fg"><label class="fl">Registration City</label><select class="fi">
-                <option>Bengaluru</option>
-                <option>Mumbai</option>
-                <option>Delhi NCR</option>
-                <option>Chennai</option>
-                <option>Hyderabad</option>
-                <option>Pune</option>
-                <option>Goa</option>
-                <option>Ahmedabad</option>
+            <div class="fg mb-12"><label class="fl">Vehicle Condition</label><select class="fi">
+                <option>Excellent</option>
+                <option>Very Good</option>
+                <option>Good</option>
               </select></div>
           </div>
-          <div class="form-card mt-10">
-            <p class="form-card-title">Availability &amp; Pricing</p>
-            <div class="form-row mb-12">
-              <div class="fg"><label class="fl">Available From</label><input type="date" class="fi" id="list-from" />
-              </div>
-              <div class="fg"><label class="fl">Min. Rental Period</label><select class="fi">
-                  <option>1 day</option>
-                  <option>2 days</option>
-                  <option>3 days</option>
-                  <option>1 week</option>
-                </select></div>
-            </div>
-            <div class="fg mb-12"><label class="fl">Expected Daily Rate (₹)</label><input type="number" class="fi"
-                placeholder="e.g. 15000" min="1000" step="500" /></div>
-            <div class="fg"><label class="fl">Additional Notes</label><input type="text" class="fi"
-                placeholder="Special conditions, modifications or restrictions" /></div>
-          </div>
-          <button class="btn btn-primary btn-lg btn-full mt-10" onclick="submitListing()">Submit Vehicle →</button>
         </div>
 
-        <!-- EARNINGS CALCULATOR -->
         <div class="calc-box">
-          <h3>Earnings Estimator</h3>
-          <p class="calc-sub">Adjust the parameters below to estimate your monthly net payout based on current platform
-            data.</p>
+          <h3>Earnings Calculator</h3>
+          <p class="calc-sub">See how much you can earn with your car.</p>
+
           <div class="calc-field">
-            <label>Days available per month</label>
-            <input type="range" id="calc-days" min="5" max="28" value="18" oninput="runCalc()" />
-            <span class="range-val"><span id="calc-days-val">18</span> days</span>
-          </div>
-          <div class="calc-field">
-            <label>Vehicle Category</label>
+            <label>Daily Rate (₹)</label>
             <select class="fi" id="calc-cat" onchange="runCalc()">
-              <option value="6000">Sedan / Hatchback (₹5K–7K/day)</option>
-              <option value="10000">SUV / Crossover (₹8K–12K/day)</option>
-              <option value="16000" selected>Luxury Sedan (₹14K–18K/day)</option>
-              <option value="25000">Sports / Performance (₹20K–30K/day)</option>
-              <option value="40000">Exotic / Supercar (₹35K–45K/day)</option>
+              <option value="3000">₹3,000 / day (Budget)</option>
+              <option value="8000">₹8,000 / day (Mid-range)</option>
+              <option value="15000" selected>₹15,000 / day (Premium)</option>
+              <option value="35000">₹35,000 / day (Luxury)</option>
             </select>
           </div>
+
           <div class="calc-field">
-            <label>City Demand Index</label>
+            <label>Rental Days / Month</label>
+            <input type="range" id="calc-days" min="5" max="30" value="20" onchange="runCalc()" />
+            <span class="range-val" id="calc-days-val">20</span>
+          </div>
+
+          <div class="calc-field">
+            <label>City Multiplier</label>
             <select class="fi" id="calc-city" onchange="runCalc()">
-              <option value="1.0">Bengaluru / Mumbai (High)</option>
-              <option value="0.95">Delhi / Hyderabad (High)</option>
-              <option value="0.85">Pune / Chennai (Moderate)</option>
-              <option value="1.1">Goa (Peak season)</option>
+              <option value="1.0">1.0× (Tier 2 cities)</option>
+              <option value="1.2" selected>1.2× (Bengaluru, Mumbai)</option>
+              <option value="1.4">1.4× (Peak tourist season)</option>
             </select>
           </div>
+
           <div class="calc-result">
-            <p class="calc-result-label">Estimated net monthly payout</p>
-            <p class="calc-result-amt">₹<span id="calc-result">2,16,000</span></p>
-            <p class="calc-result-note" id="calc-note">18 days × ₹16,000/day · 75% occupancy · 80% net after platform
-              fee</p>
+            <div class="calc-result-label">Your Monthly Earnings</div>
+            <div class="calc-result-amt">₹<span id="calc-result">288,000</span></div>
+            <div class="calc-result-note" id="calc-note">20 days × ₹15,000/day · 75% occupancy · 80% net after
+              platform fee</div>
           </div>
+
           <div class="calc-info">
-            <strong>How this is calculated</strong>
-            <p>75% average occupancy from real platform data. MB MOTORS retains a 20% commission. The remaining 80% is
-              paid to you every Monday via bank transfer. Actual earnings vary by demand, seasonality and vehicle
-              condition.</p>
+            <strong>What's included?</strong>
+            <p>Insurance, maintenance, roadside support, GPS tracking — everything. You just register and start earning.
+            </p>
           </div>
+
+          <button class="btn btn-primary btn-full btn-lg mt-16" onclick="submitListing()">Request Inspection</button>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- ════════ SCRIPT ════════ -->
   <script src="frontend/js/app.js"></script>
 </body>
 
