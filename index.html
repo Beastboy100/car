@@ -21,8 +21,10 @@
       <a class="nav-logo" href="#" onclick="Router.go('home');return false;">MB MOTORS</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#"
-            onclick="Router.go('home');setTimeout(()=>scrollTo('Collection'),50);return false;">Collection</a></li>
-        <li><a href="#" onclick="Router.go('home');setTimeout(()=>scrollTo('why'),50);return false;">Why Us</a></li>
+            onclick="Router.go('home');setTimeout(()=>scrollToSection('Collection'),50);return false;">Collection</a>
+        </li>
+        <li><a href="#" onclick="Router.go('home');setTimeout(()=>scrollToSection('why'),50);return false;">Why Us</a>
+        </li>
         <li><a href="#" onclick="Router.go('gps');return false;">GPS</a></li>
         <li><a href="#" onclick="Router.go('list');return false;">List Car</a></li>
         <li class="nav-sep"></li>
@@ -39,8 +41,9 @@
   <div class="drawer" id="drawer">
     <a href="#" onclick="closeDrawer();Router.go('home');return false;">Home</a>
     <a href="#"
-      onclick="closeDrawer();Router.go('home');setTimeout(()=>scrollTo('Collection'),50);return false;">Collection</a>
-    <a href="#" onclick="closeDrawer();Router.go('home');setTimeout(()=>scrollTo('why'),50);return false;">Why Us</a>
+      onclick="closeDrawer();Router.go('home');setTimeout(()=>scrollToSection('Collection'),50);return false;">Collection</a>
+    <a href="#" onclick="closeDrawer();Router.go('home');setTimeout(()=>scrollToSection('why'),50);return false;">Why
+      Us</a>
     <a href="#" onclick="closeDrawer();Router.go('gps');return false;">GPS Tracking</a>
     <a href="#" onclick="closeDrawer();Router.go('list');return false;">List Your Car</a>
     <a href="#" id="drawer-auth-btn" onclick="closeDrawer();Router.go('login');return false;">Login</a>
@@ -61,7 +64,7 @@
           charges, no paperwork queues — just straightforward bookings with verified identity and full insurance
           included.</p>
         <div class="hero-actions">
-          <button class="btn btn-primary" onclick="scrollTo('Collection')">View Collection</button>
+          <a href="#Collection" class="btn btn-primary">View Collection</a>
           <button class="btn btn-ghost" onclick="Router.go('login')">Create Account</button>
         </div>
         <div class="hero-stats">
@@ -96,7 +99,7 @@
         </div>
         <div class="bfield"><label>Pick-up Date</label><input type="date" id="bb-pu" /></div>
         <div class="bfield"><label>Return Date</label><input type="date" id="bb-rt" /></div>
-        <button class="bbar-btn" onclick="scrollTo('Collection')">Search →</button>
+        <a href="#Collection" class="bbar-btn">Search →</a>
       </div>
     </div>
 
@@ -314,7 +317,7 @@
           <h2>Ready to book?</h2>
           <p>20+ vehicles. Verified, insured, delivered to your door.</p>
         </div>
-        <button class="btn btn-primary btn-lg" onclick="scrollTo('Collection')">Browse Collection →</button>
+        <a href="#Collection" class="btn btn-primary btn-lg">Browse Collection →</a>
       </div>
     </div>
 
@@ -491,7 +494,7 @@
               </select></div>
           </div>
           <div class="form-row mb-14">
-            <div class="fg"><label class="fl">Phone Number <span class="fl-req">*</span></label><input type="ph"
+            <div class="fg"><label class="fl">Phone Number <span class="fl-req">*</span></label><input type="tel"
                 class="fi" id="kyc-phone" placeholder="+91 9457543573" /></div>
             <div class="fg"><label class="fl">Email Address <span class="fl-req">*</span></label><input type="email"
                 class="fi" id="kyc-email" placeholder="Your@email.com" /></div>

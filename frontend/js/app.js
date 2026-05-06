@@ -16,8 +16,6 @@
  *   Utils     — shared helpers
  */
 
-'use strict';
-
 /* ─────────────────────────────────────────────────────────────
    UTILS
 ───────────────────────────────────────────────────────────── */
@@ -211,7 +209,7 @@ function handleBookNav() {
   if (!State.isLoggedIn()) {
     Router.go('login');
   } else {
-    scrollTo('fleet');
+    scrollToSection('Collection');
   }
 }
 
@@ -338,9 +336,9 @@ function fmtAadhaar(input) {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   FLEET FILTER
+   COLLECTION FILTER
 ───────────────────────────────────────────────────────────── */
-function filterFleet(btn, cat) {
+function filterCollection(btn, cat) {
   document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.car-card').forEach(card => {
